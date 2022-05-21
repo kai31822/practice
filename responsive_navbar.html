@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Nav Bar 1</title>
+  <link rel="stylesheet" href="responsive_navbar.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(function () {
+      $(".toggle").on("click", function () {
+        if ($(".item").hasClass("active")) {
+          $(".item").removeClass("active");
+        } else {
+          $(".item").addClass("active");
+        }
+      })
+    });
+
+  </script>
+
+
+</head>
+
+<body>
+  <nav>
+    <ul class="menu">
+      <li class="logo"><a href="#">logo</a></li>
+      <li class="item"><a href="#">Home</a></li>
+      <li class="item"><a href="#">About</a></li>
+      <li class="item"><a href="#">Services</a></li>
+      <li class="item button"><a href="#">Login</a></li>
+      <li class="item button secondary"><a href="#">Sing Up</a></li>
+      <!-- 做選單用 -->
+      <li class="toggle"><span class="bars"></span></li>
+    </ul>
+  </nav>
+  <main>
+    <a href="#" style="position: fixed;bottom: 0;"></a>
+  </main>
+
+</body>
+
+</html>
