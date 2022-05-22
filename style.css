@@ -1,0 +1,284 @@
+/* ---------- *\
+     reset
+\* ---------- */
+:root {
+    --praimary: #ff6a48;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+a {
+    text-decoration: none;
+}
+ul,
+li {
+    list-style: none;
+}
+p {
+    font-size: 18px;
+}
+/* ------------ *\
+   12格-欄寬設定
+\* ------------ */
+.full-width {
+    width: 100%;
+}
+
+.fixed-width {
+    width: 1200px;
+    margin: auto;
+}
+
+.col-1 {
+    width: calc(100% / 12 * 1);
+}
+
+.col-2 {
+    width: calc(100% / 12 * 2);
+}
+
+.col-3 {
+    width: calc(100% / 12 * 3);
+}
+
+.col-4 {
+    width: calc(100% / 12 * 4);
+}
+
+.col-5 {
+    width: calc(100% / 12 * 5);
+}
+
+.col-6 {
+    width: calc(100% / 12 * 6);
+}
+
+.col-7 {
+    width: calc(100% / 12 * 7);
+}
+
+.col-8 {
+    width: calc(100% / 12 * 8);
+}
+
+.col-9 {
+    width: calc(100% / 12 * 9);
+}
+
+.col-10 {
+    width: calc(100% / 12 * 10);
+}
+
+.col-11 {
+    width: calc(100% / 12 * 11);
+}
+
+.col-12 {
+    width: calc(100% / 12 * 12);
+    /* background-color: var(--praimary); */
+    font-size: var(--font);
+}
+[class*='col'] {
+    float: left;
+    padding: 15px;
+}
+/* --------------- *\
+     navigation 1
+\* --------------- */
+.btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: var(--praimary);
+    color: white;
+    border-radius: 15px;
+}
+header .nav-1 {
+    z-index: 2022;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 227, 194);
+    /* box-shadow: 0 5px 25px rgb(0 0 0 / 20%); */
+    padding: 0 50px;
+    transition: 0.6s;
+}
+
+header .logo {
+    color: rgb(37, 12, 12);
+    font-size: 1.5em;
+    /* font-weight: 700 ;  100~900 */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+header .navigation {
+    position: relative;
+    /*for header.sticky .navigation   */
+    transition: 0.6s;
+    transition-property: line-height;
+}
+
+header .navigation .menu {
+    height: 75px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    /* 使用 user-select 來設定是否可以選取或直接全選 :none auto text contain all */
+    user-select: none;
+}
+header .nav-2 {
+    z-index: 2022;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 227, 194);
+    box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+    padding: 0 50px;
+    transition: 0.6s;
+}
+
+header .sticky {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+/*nav item 距離設定 */
+.menu-item > a {
+    color: rgb(31, 3, 3);
+    font-size: 1em;
+    margin: 20px;
+    padding: 25px 0;
+}
+/* 背景圖片 */
+header {
+    position: relative;
+    height: 100vh;
+    background: url(IMG_2564.JPG) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+header::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(to top, #23252b, transparent);
+    width: 100%;
+    height: 80px;
+    bottom: 0;
+}
+
+/* 定位在下方的那條.. */
+.p-1 {
+    padding: 5px 0;
+}
+.downnav1-1 > i {
+    font-size: 40px;
+}
+.bl-1 {
+    border-left: 1px rgba(0, 0, 0, 0.288) solid;
+}
+.btn-order {
+    margin: 10px 0;
+}
+.downnav-2 {
+    padding: 8px 0;
+}
+.downnav {
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to top, rgb(255, 227, 194) 0%, rgb(255, 227, 194) 80%, transparent 100%);
+}
+/* section */
+.section_img {
+    width: 100%;
+    object-fit: cover;
+}
+.line-light {
+    position: relative;
+}
+.line-light::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-top: 3px solid #c7a9a3;
+    width: 30px;
+    top: 6px;
+    left: 15px;
+}
+
+/* footer */
+.main-footer {
+    padding: 20px 0 0;
+    background: linear-gradient(-20deg, #3e5151, #decba4);
+    /* background: linear-gradient(-20deg, #feac5e, #c779d0, #4bc0c8); */
+}
+.main-footer .container {
+    display: flex;
+    width: 1200px;
+    margin: auto;
+}
+.footer-item {
+    width: 0;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+.footer-item h2 {
+    font-size: 24px;
+    color: #fff;
+    border-bottom: 1px dotted #fff;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+}
+.footer-item nav {
+    display: flex;
+    flex-direction: column;
+}
+.footer-item nav a {
+    color: #fff;
+    line-height: 1.5;
+    text-decoration: none;
+    padding: 5px 0;
+}
+.footer-item nav a:hover {
+    color: #4bc0c8;
+}
+.subscribe {
+    display: flex;
+    flex-direction: column;
+}
+.subscribe form {
+    display: flex;
+    width: 100%;
+    margin: auto 0;
+}
+.subscribe input[type='text'],
+.subscribe input[type='submit'] {
+    border: none;
+    padding: 5px 10px;
+}
+.subscribe input[type='text'] {
+    width: 0;
+    flex-grow: 1;
+}
+.subscribe input[type='submit'] {
+    columns: #fff;
+    background-color: #893a94;
+    color: #eb62fa;
+}
+.copyright {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0 0;
+    padding: 10px 0;
+    background-color: black;
+    color: #c779d0;
+}
