@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>clock</title>
+</head>
+
+<body>
+  <label id="clock"></label>
+
+  <!-- clock -->
+  <script>
+    const clock = document.getElementById("clock");
+
+    update();
+    setInterval(update, 1000);
+
+    function update() {
+      let date = new Date();
+      console.log(date);
+      clock.innerHTML = formatTime(date);
+      function formatTime() {
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        let ampm = hours >= 12 ? "pm" : "am";
+        hours = (hours % 12) || 12;
+
+        hours = format0(hours);
+        minutes = format0(minutes);
+        seconds = format0(seconds);
+
+        return `${hours}:${minutes}:${seconds} ${ampm}`
+      }
+
+    }
+    function format0(time) {
+      time = time.toString();
+      return time.length < 2 ? "0" + time : time;
+    }
+
+  </script>
+</body>
+
+</html>

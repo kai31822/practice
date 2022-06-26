@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>class</title>
+
+</head>
+
+<body>
+
+  <!-- class -->
+  <!-- <script>
+    class student {
+      constructor(name, age, gpa) {
+        this.name = name;
+        this.age = age;
+        this.gpa = gpa;
+      }
+      study() {
+        console.log(`${this.name} + is studying`);
+      }
+    }
+    const student1 = new student('a1', 18, 3.2);
+    console.log(student1.name);
+    console.log(student1.age);
+    console.log(student1.gpa);
+    student1.study();
+  </script> -->
+
+  <!-- static -->
+  <!-- <script>
+    class Car {
+      static numberofCars = 0;
+      constructor(model) {
+        this.model = model;
+        Car.numberofCars += 1;
+      }
+    }
+    const car1 = new Car("mta")
+    const car2 = new Car("maa")
+    const car3 = new Car("msa")
+    console.log(car1.numberofCars);
+    console.log(Car.numberofCars);
+
+  </script> -->
+
+  <!-- inheritance -->
+  <!-- <script>
+    class Animal {
+      alive = true;
+      eat() {
+        console.log(`This ${this.name} is eating`)
+      }
+      sleep() {
+        console.log(`This ${this.name} is sleeping`)
+      }
+    }
+
+    class Rabbit extends Animal {
+
+      name = 'Rabbit';
+      run() {
+        console.log(`This ${this.name} is running`)
+      }
+
+    }
+    class Fish extends Animal {
+
+      name = 'fish';
+
+    }
+
+    const rabbit = new Rabbit;
+    const fish = new Fish;
+
+    console.log(rabbit.alive);
+    rabbit.eat();
+    rabbit.run();
+    fish.sleep();
+
+
+
+
+
+
+  </script> -->
+
+  <!-- super -->
+  <!-- <script>
+
+    class Animal2 {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+    }
+
+    class Rabbit2 extends Animal2 {
+      constructor(name, age, runspeed) {
+        super(name, age);
+        this.runspeed = runspeed;
+      }
+
+    }
+    class Fish2 extends Animal2 {
+      constructor(name, age, swimspeed) {
+        super(name, age);
+        this.swimspeed = swimspeed;
+      }
+
+    }
+    class Hawk2 extends Animal2 {
+      constructor(name, age, flyspeed) {
+        super(name, age);
+        this.flyspeed = flyspeed;
+      }
+    }
+
+    const rabbit = new Rabbit2("rabbit", 1, 40);
+    const fish = new Fish2("fish", 2, 80);
+    const hawk = new Hawk2("hawk", 1, 40);
+    console.log(rabbit.name);
+    console.log(fish.swimspeed);
+
+
+  </script> -->
+
+  <!-- get set -->
+  <!-- <script>
+    class Car {
+      constructor(power) {
+        this._gas = 25;
+        this._power = power;
+      }
+      get power() {
+        return `${this._power}hp`;
+      }
+      get gas() {
+        return `${this._gas} L(${this._gas / 50 * 100
+          }%)`
+      }
+      set gas(value) {
+        if (value > 50) {
+          value = 50;
+        }
+        else if (value < 0) {
+          value = 0;
+        }
+        this._gas = value
+      }
+    }
+    let car = new Car(400);
+    car.gas = 100;
+    console.log(car.power);
+    console.log(car.gas);
+
+  </script> -->
+
+  <!-- try catch -->
+  <!-- <script>
+    try {
+      let x = window.prompt('Enter a #')
+      x = Number(x);
+
+      if (isNaN(x)) throw "That wasn't a number!";
+      if (x == "") {
+        throw "That was empty!";
+      }
+      console.log(x + ' is a number');
+    } catch (error) {
+      console.log(error);
+    }
+    finally {
+      console.log("This always executes");
+    }
+
+
+  </script> -->
+</body>
+
+</html>

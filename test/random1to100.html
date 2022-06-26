@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1~100</title>
+</head>
+
+<body>
+
+  <input type="number" min="0" placeholder="1" id="min">
+  <input type="number" min="0" placeholder="100" id="max">
+  <input type="submit" value="ROLL!!" id="sub" onclick="roll()">
+
+  <br>
+  <!-- <button id="roll">Roll</button> -->
+  <!-- <br> -->
+  <label id="roll1"></label>
+
+
+
+  <script>
+    function getRandom(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    function roll() {
+      let a = document.querySelector('#min').value;
+      let b = document.querySelector('#max').value;
+
+      if (a > b) {
+        document.getElementById("roll1").innerHTML = 'min>max';
+      } else {
+        document.getElementById("roll1").innerHTML = getRandom(a, b);
+        console.log(a);
+        console.log(b);
+        console.log(getRandom(a, b));
+      }
+
+    }
+
+
+
+  </script>
+</body>
+
+</html>

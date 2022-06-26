@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>count</title>
+  <style>
+    .d1 {
+      width: 40vw;
+
+      background-color: rgba(0, 0, 0, 0.781);
+    }
+
+    .d2 {
+      display: flex;
+      justify-content: space-around;
+      padding-bottom: 10px;
+    }
+
+    button {
+      font-size: 20px;
+
+    }
+
+    #countLabel,
+    #count {
+      color: white;
+      display: block;
+      text-align: center;
+      font-size: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="d1">
+    <label id="countLabel">0</label>
+    <div class="d2">
+      <button id="decreasebtn">decrease</button>
+      <button id="resetbtn">reset</button>
+      <button id="increasebtn">increase</button>
+    </div>
+    <label id="count"></label>
+  </div>
+  <script>
+    let count = 0;
+    document.getElementById("decreasebtn").onclick = function () {
+      if (count <= 0) {
+        document.getElementById("count").innerHTML = '>0';
+      } else { count -= 1; }
+
+      document.getElementById("countLabel").innerHTML = count;
+    }
+    document.getElementById("resetbtn").onclick = function () {
+      if (count >= 0) {
+        count = 0;
+        document.getElementById("count").innerHTML = '';
+      }
+
+      document.getElementById("countLabel").innerHTML = count;
+    }
+    document.getElementById("increasebtn").onclick = function () {
+      if (count >= 0) {
+        count += 1;
+        document.getElementById("count").innerHTML = '';
+      }
+
+      document.getElementById("countLabel").innerHTML = count;
+    }
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
