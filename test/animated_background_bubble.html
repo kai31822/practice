@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animated_background_bubble</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #0c192c;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .bubbles {
+      position: relative;
+      display: flex;
+    }
+
+    .bubbles span {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      background: #4fc3dc;
+      margin: 0 4px;
+      border-radius: 50%;
+      box-shadow:
+        /*外圈1*/
+        0 0 0 10px #4fc3dc44,
+        /*外圈2 淡*/
+        0 0 50px #4fc3dc,
+        /*外圈3*/
+        0 0 100px #4fc3dc;
+      animation: bubble 15s linear infinite;
+      /* 泡泡上升時間 */
+      animation-duration: calc(120s /var(--i));
+    }
+
+
+    .bubbles span:nth-child(even) {
+      background: #ff2d75;
+      box-shadow:
+        /*外圈1*/
+        0 0 0 10px #4fc3fc44,
+        /*外圈2 淡*/
+        0 0 50px #ff2d75,
+        /*外圈3*/
+        0 0 100px #ff2d75;
+
+    }
+
+    @keyframes bubble {
+      0% {
+        /* 頁面垂直移動元素 ,scale来放大或缩小元素*/
+        transform: translateY(110vh) scale(0);
+      }
+
+      100% {
+
+        transform: translateY(-10vh) scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="bubbles">
+      <!-- style="--變數:值"> -->
+      <span style="--i:29"></span>
+      <span style="--i:24"></span>
+      <span style="--i:29"></span>
+      <span style="--i:24"></span>
+      <span style="--i:13"></span>
+      <span style="--i:23"></span>
+      <span style="--i:17"></span>
+      <span style="--i:15"></span>
+      <span style="--i:24"></span>
+      <span style="--i:17"></span>
+      <span style="--i:25"></span>
+      <span style="--i:18"></span>
+      <span style="--i:21"></span>
+      <span style="--i:26"></span>
+      <span style="--i:25"></span>
+      <span style="--i:18"></span>
+      <span style="--i:21"></span>
+      <span style="--i:26"></span>
+      <span style="--i:19"></span>
+      <span style="--i:23"></span>
+      <span style="--i:19"></span>
+      <span style="--i:23"></span>
+      <span style="--i:15"></span>
+      <span style="--i:24"></span>
+      <span style="--i:17"></span>
+      <span style="--i:29"></span>
+      <span style="--i:24"></span>
+      <span style="--i:13"></span>
+      <span style="--i:23"></span>
+      <span style="--i:15"></span>
+      <span style="--i:25"></span>
+      <span style="--i:18"></span>
+      <span style="--i:21"></span>
+      <span style="--i:26"></span>
+      <span style="--i:24"></span>
+      <span style="--i:17"></span>
+      <span style="--i:25"></span>
+      <span style="--i:18"></span>
+      <span style="--i:21"></span>
+      <span style="--i:23"></span>
+      <span style="--i:29"></span>
+      <span style="--i:24"></span>
+      <span style="--i:13"></span>
+      <span style="--i:26"></span>
+      <span style="--i:19"></span>
+      <span style="--i:23"></span>
+      <span style="--i:19"></span>
+      <span style="--i:23"></span>
+
+    </div>
+  </div>
+</body>
+
+</html>
