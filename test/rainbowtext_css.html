@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rainbowtext</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+
+      background-color: rgb(48, 47, 47);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+
+    }
+
+    .rainbowText {
+      font-size: 70px;
+      font-weight: 900;
+      background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      text-transform: uppercase;
+      /* 剪出文字
+      -webkit代表谷歌【chrome】/蘋果【safari】識別碼*/
+      background-clip: text;
+      -webkit-background-clip: text;
+      /* 文字顏色透明 */
+      -webkit-text-fill-color: transparent;
+      animation: move 15s linear infinite;
+    }
+
+    @keyframes move {
+      to {
+        background-position: 300vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+</body>
+<div class="container">
+  <p class="rainbowText">rainbow text</p>
+</div>
+
+</html>
