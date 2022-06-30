@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name='keywords' content='HTML, CSS, JavaScript'>
+  <meta name='description' content='test'>
+  <meta name='author' content='Kai'>
+  <meta http-equiv="refresh" content="180">
+  <title>RandomColor</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .btn {
+      background: none;
+      color: black;
+      padding: 15px 60px;
+      margin: 20px auto;
+      max-width: 200px;
+      /* outline: wheat; */
+      display: block;
+      border: 2px solid rgb(0, 0, 0);
+      cursor: pointer;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      width: 20%;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: wheat;
+      border: 2px solid #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="btn" onclick="addColor();">Refresh</button>
+  <section class="container"></section>
+
+
+
+
+
+
+
+
+  <script>
+    // 創造100個箱子
+    for (let index = 0; index <= 100; index++) {
+      const box = document.createElement('div');
+      box.classList.add('box');
+      document.querySelector('.container').appendChild(box);
+    }
+
+    const btn = document.querySelector('.btn');
+    const randomColorBlock = document.querySelectorAll('.box');
+
+    function RandomHexColorCode() {
+      let chars = "0123456789abcdef";
+      let colorLength = 6;
+      let color = "";
+
+      for (let i = 0; i <= colorLength; i++) {
+        let randomColor = Math.floor(Math.random() * chars.lenght);
+
+        color += chars.substring(randomColor, randomColor + 1)
+      }
+      return "#" + color;
+    }
+    function addColor() {
+      randomColorBlock.forEach(e => {
+        let newColor = RandomHexColorCode();
+        e.style.background = newColor;
+        e.innerHTML = newColor;
+      })
+    }
+
+  </script>
+</body>
+
+</html>
