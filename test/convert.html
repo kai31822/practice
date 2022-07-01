@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name='keywords' content='HTML, CSS, JavaScript'>
+  <meta name='description' content='test'>
+  <meta name='author' content='Kai'>
+  <meta http-equiv="refresh" content="180">
+  <title>RandomColor</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+    .btn {
+      background: none;
+      color: black;
+      padding: 15px 60px;
+      margin: 20px auto;
+      max-width: 200px;
+      /* outline: wheat; */
+      display: block;
+      border: 2px solid rgb(0, 0, 0);
+      cursor: pointer;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      width: 20%;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: wheat;
+      border: 2px solid #fff;
+    }
+
+    #btns {
+      display: flex;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="btns">
+    <button class="btn " onclick=" addhex()">Hex</button>
+    <button class="btn " onclick="addrgb()">RGB</button>
+    <button class="btn btnconvert hex" onclick="addColor();">Refresh</button>
+    <!-- <button class="btn  " onclick="convertColor()">convert</button> -->
+    <!-- <button class="btn rgb">Refresh_RGB</button> -->
+  </div>
+
+  <section class="container"></section>
+
+
+
+
+
+
+
+
+  <script>
+    // 創造100個箱子
+    for (let index = 0; index <= 100; index++) {
+      const box = document.createElement('div');
+      box.classList.add('box');
+      document.querySelector('.container').appendChild(box);
+    }
+
+    const btn = document.querySelector('.btn');
+
+    // 選取全部box
+    const randomColorBlock = document.querySelectorAll('.box');
+
+    //隨機產生hex
+    function RandomHexColorCode() {
+      let chars = "0123456789abcdef";
+      let colorLength = 6;
+      let color = "";
+
+      for (let i = 0; i < colorLength; i++) {
+        let randomColor = Math.floor(Math.random() * chars.length);
+
+        color += chars.substring(randomColor, randomColor + 1);
+        console.log(randomColor);
+      }
+      return "#" + color;
+    }
+
+    let hex = RandomHexColorCode();
+    const btnconvert = document.querySelector('.btnconvert');
+
+    //增加判斷hex rgb
+    function addhex() {
+      btnconvert.classList.add('hex');
+      if (btnconvert.classList.contains('rgb')) {
+        btnconvert.classList.remove('rgb');
+      }
+    };
+    function addrgb() {
+      btnconvert.classList.add('rgb');
+      if (btnconvert.classList.contains('hex')) {
+        btnconvert.classList.remove('hex');
+      }
+    };
+
+
+    // 轉換hex to rgb function
+    function convertHexToRGB(hex) {
+      let rgb = "rgb(" + parseInt("0x" + hex.slice(1, 3)) + "," + parseInt("0x" + hex.slice(3, 5)) + "," + parseInt("0x" + hex.slice(5, 7)) + ")";
+      return rgb;
+    }
+
+
+    // 增加style 顏色
+    function addColor() {
+      if (btnconvert.classList.contains('hex')) {
+        // hex
+        randomColorBlock.forEach(e => {
+          let newColor = RandomHexColorCode();
+          e.style.backgroundColor = newColor;
+          e.innerHTML = newColor;
+        })
+
+      } else if (btnconvert.classList.contains('rgb')) {
+        //rgb
+        randomColorBlock.forEach(e => {
+          let newColor = RandomHexColorCode();
+          let rgbcolor = convertHexToRGB(newColor);
+          e.style.backgroundColor = rgbcolor;
+          e.innerHTML = rgbcolor;
+        })
+
+      }
+    }
+
+
+
+  </script>
+</body>
+
+</html>
