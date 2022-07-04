@@ -28,18 +28,36 @@
     <!-- banner -->
     <div class="container">
         <h1>會員登入</h1>
-        <p id="showname"></p>
+     
     </div>
     <!-- banner END -->
     <!-- account -->
-   
+    <?php
+$account = array('admin' => '1234', 'web111a' => 'web111a');
+// $accountuser = array('admin' , 'web111a');
+// $accountpwd = array('1234','web111a');
+// $account = array($accountuser,$accountpwd);
+if (isset($_POST['user']) && isset($_POST['pwd']) && !empty($_POST['user']) && !empty($_POST['pwd'])) {
+    if (($_POST['user'] == "admin" && $_POST['pwd'] == $account['admin'])||($_POST['user'] == "web111a" && $_POST['pwd'] == $account['web111a'])) {
+       $user = $_POST['user'];
+        $pwd = $_POST['pwd'];
+        echo "<div id='show' class='container'><P class='ppcolor'>歡迎:{$user}</P>
+        </div>";
+    } else {
+        
+        echo "<div class='container'><P class='pcolor'>帳號或密碼錯誤!!</P>
+        </div>";
+    }
+    // <P class='pcolor' >密碼為:{$pwd}</P>
+}
+
+?>
     <section id="log" class="container">
-         <p class="pcolor" id="accounterr"></p>
-        <form > <!--action="loginSignup.html" method="post"-->
-            <input type="text" id="userid" name="userid" placeholder="user/email" required>
+        <form action="index.php" method="post">
+            <input type="text" id="userid" name="user" placeholder="user/email" required>
             <div class="pwd-container">
                 <label id="eye"><i class="fa-solid fa-eye-slash"></i></label>
-                <input type="password" id="pwd" name="pwd" value="" placeholder="password" required>
+                <input type="password" id="pwd" name="pwd" value="" placeholder="password" required  >
             </div>
             <input type="submit" id="loginbtn" class="loginbtn" name="login" value="登入">
             <input type="reset" class="loginbtn" value="取消">
@@ -48,23 +66,14 @@
     <div class="signout-container">
     <button id="signout">登出</button>
     </div>
+
+    
 <!-- account END -->
 <!-- footer -->
 
 <!-- footer END -->
 
-
-
-
-
-
-
-
-
-
-
-
-
 <script src="LoginSignup.js"></script>
+
 </body>
 </html>
