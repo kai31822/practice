@@ -41,7 +41,7 @@ if (isset($_POST['user']) && isset($_POST['pwd']) && !empty($_POST['user']) && !
     if (($_POST['user'] == "admin" && $_POST['pwd'] == $account['admin'])||($_POST['user'] == "web111a" && $_POST['pwd'] == $account['web111a'])) {
        $user = $_POST['user'];
         $pwd = $_POST['pwd'];
-        echo "<div id='show' class='container'><P class='pcolor'>帳號為:{$user}</P>
+        echo "<div id='show' class='container'><P class='ppcolor'>帳號為:{$user}</P>
         </div>";
     } else {
         
